@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  stock: false
+  size: 1
+  price: 1
+
+two:
+  stock: false
+  size: 1
+  price: 1

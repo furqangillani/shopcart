@@ -1,0 +1,2 @@
+class VariantColor < ApplicationRecord
+end
