@@ -11,6 +11,29 @@
   </head>
 
   <body>
-    <%= yield %>
+<!--  <div class="container">-->
+    <%#= link_to "Home", root_path %>
+
+    <%#= if user_signed_in? %>
+      <%#= link_to "Sig Out", destroy_user_session_path, method: :delete %>
+    <%# elsif !seller_signed_in? && !admin_signed_in? %>
+      <%#= link_to "Sign In", new_user_session_path %>
+    <%#= end %>
+
+    <%#= if seller_signed_in? %>
+      <%#= link_to "Sig Out", destroy_seller_session_path, method: :delete %>
+    <%# elsif !seller_signed_in? && !admin_signed_in? %>
+      <%#= link_to "SignIn as Seller", new_seller_session_path %>
+    <%#= end %>
+
+    <%#= if admin_signed_in? %>
+      <%#= link_to "Sig Out", destroy_admin_session_path, method: :delete %>
+    <%# elsif !user_signed_in? && !seller_signed_in? %>
+      <%#= link_to "SignIn as Admin", new_admin_session_path %>
+    <%#= end %>
+
+<%= yield %>
+
+<!--  </div>-->
   </body>
 </html>
