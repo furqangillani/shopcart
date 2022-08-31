@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_31_103808) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_31_134358) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -54,6 +54,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_31_103808) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "sub_category_id", null: false
+    t.index ["sub_category_id"], name: "index_products_on_sub_category_id"
   end
 
   create_table "sellers", force: :cascade do |t|
@@ -72,6 +74,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_31_103808) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "category_id", null: false
+    t.index ["category_id"], name: "index_sub_categories_on_category_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -98,6 +102,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_31_103808) do
     t.integer "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "product_id", null: false
+    t.index ["product_id"], name: "index_variants_on_product_id"
   end
 
+  add_foreign_key "products", "sub_categories"
+  add_foreign_key "sub_categories", "categories"
+  add_foreign_key "variants", "products"
 end
