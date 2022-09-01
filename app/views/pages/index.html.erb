@@ -47,34 +47,11 @@
           <i class="fa fa-dashboard fa-lg"></i> Dashboard
         </a>
       </li>
-
         <% @category.each do |record| %>
           <li  data-toggle="collapse" data-target="#products" class="collapsed">
-            <a href="#"><i class="fa fa-gift fa-lg"></i><%= record.name %><span class="arrow"></span></a>
+            <%= link_to "#{record.name}", products_showsub_path %>
           </li>
         <% end %>
-      <ul class="sub-menu collapse" id="products">
-        <li class="active"><a href="#">CSS3 Animation</a></li>
-        <li><a href="#">General</a></li>
-        <li><a href="#">Buttons</a></li>
-        <li><a href="#">Tabs & Accordions</a></li>
-        <li><a href="#">Typography</a></li>
-        <li><a href="#">FontAwesome</a></li>
-        <li><a href="#">Slider</a></li>
-        <li><a href="#">Panels</a></li>
-        <li><a href="#">Widgets</a></li>
-        <li><a href="#">Bootstrap Model</a></li>
-      </ul>
-<!--      <li>-->
-<!--        <a href="#">-->
-<!--          <i class="fa fa-user fa-lg"></i> Profile-->
-<!--        </a>-->
-<!--      </li>-->
-<!--      <li>-->
-<!--        <a href="#">-->
-<!--          <i class="fa fa-users fa-lg"></i> Users-->
-<!--        </a>-->
-<!--      </li>-->
     </ul>
   </div>
 </div>
@@ -98,7 +75,10 @@
             </div>
             <!-- Product actions-->
             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-              <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">View options</a></div>
+              <div class="text-center">
+                <%= link_to "View Product", products_path %>
+<!--                <a class="btn btn-outline-dark mt-auto" href="#">View options</a>-->
+              </div>
             </div>
           </div>
         </div>

@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
   root "pages#index"
+  get "products/showsub"
+
+  resources :pages, only: [:show]
 
   devise_for :sellers
   devise_for :admins

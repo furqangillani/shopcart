@@ -5,6 +5,11 @@ class ProductsController < ApplicationController
     @products = Product.all
   end
 
+  def showsub
+    @category = Category.all
+    @subcategory = SubCategory.all
+  end
+
   def show
   end
 
@@ -17,7 +22,6 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
-
       if @product.save
         redirect_to product_path(@product), notice: "Product was successfully created."
       else
@@ -47,4 +51,5 @@ class ProductsController < ApplicationController
   def product_params
     params.require(:product).permit(:title, :description)
   end
+
 end
